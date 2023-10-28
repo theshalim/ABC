@@ -1,0 +1,23 @@
+﻿@model ABC.Models.BookCategory
+@{
+    ViewData["Title"] = "RemoveCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.BookCategoryName)
+    </dt>
+    <dt>
+        @Html.DisplayNameFor(model => model.StockType)
+    </dt>
+    <dt>
+        @Html.DisplayNameFor(model => model.CalenderYear)
+    </dt>
+</dl>
+<form asp-action="RemoveCategory">
+    <div>
+        <input type="submit" value="RemoveCategory" />
+    </div>
+</form>
+

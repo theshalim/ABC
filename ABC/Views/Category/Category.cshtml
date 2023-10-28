@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ABC.Models.BookCategory>
+@{
+    ViewData["Title"] = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-10">
+    <a asp-action="AddCategory" asp-controller="Category" class="btn  btn-outline-info">Add Category</a>
+    <table class="table  tab-content">
+    <thead>
+        <tr>
+            <td class="col-3">Book Category </td>
+            <td class="col-3">Stock Type </td>
+            <td class="col-3">Calender Year </td>
+            <td class="col-3">Action</td>
+        </tr>
+    </thead>
+   @foreach(var BookCategory in Model)
+   {
+       <tbody>
+           <tr>
+               <td>@BookCategory.CategoryId</td>
+               <td>@BookCategory.BookCategoryName</td>
+               <td>@BookCategory.StockType</td>
+               <td>@BookCategory.CalenderYear</td>
+               <td>
+                   <a asp-action="EditCategory" asp-controller="Category" class="btn  btn-outline-secondary">Edit</a>
+                   <a asp-action="RemoveCategory" asp-controller="Category" class="btn  btn-outline-danger">Remove</a>
+               </td>
+           </tr>
+       </tbody>
+   }
+    </table>    
+</div>
+
+
