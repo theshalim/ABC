@@ -6,18 +6,34 @@
 
 <dl>
     <dt>
+        @Html.DisplayNameFor(model => model.CategoryId)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CategoryId)
+    </dd>
+    <dt>
         @Html.DisplayNameFor(model => model.BookCategoryName)
     </dt>
+    <dd>
+        @Html.DisplayFor(model => model.BookCategoryName)
+    </dd>
     <dt>
         @Html.DisplayNameFor(model => model.StockType)
     </dt>
+    <dd>
+        @Html.DisplayFor(model => model.StockType)
+    </dd>
     <dt>
         @Html.DisplayNameFor(model => model.CalenderYear)
     </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CalenderYear)
+    </dd>
 </dl>
 <form asp-action="RemoveCategory">
     <div>
         <input type="submit" value="RemoveCategory" />
+        <button type="reset" class="btn-dark">Back</button>
     </div>
 </form>
 

@@ -35,15 +35,24 @@ namespace ABC.Controllers
         [HttpGet]
         public IActionResult RemoveCategory(int Id)
         {
-            var RemoveCategory = _context.BookCategories.Find(Id);
+            var category = _context.BookCategories.Find(Id);
            
-            return View(RemoveCategory);
+            return View(category);
             
         }
         [HttpPost]
-        public IActionResult RemoveCategory(BookCategory BookCategory)
+        public IActionResult RemoveCategoryConfirmed(int Id)
         {
-            _context.BookCategories.Remove(BookCategory);
+            var Category = _context.BookCategories.Find(Id);
+            if (Category == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+
+            }
+           _context.BookCategories.Remove(Category);
             _context.SaveChanges();
             return View();
         }
