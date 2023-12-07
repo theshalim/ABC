@@ -5,33 +5,33 @@
 }
 
 <div class="col-10">
-    <a asp-action="AddCategory" asp-controller="Category" class="btn  btn-outline-info">Add Category</a>
+    <a asp-action="AddCategory" asp-controller="Category" class="btn float-sm-right  btn-outline-info">Add Category</a>
     <table class="table  tab-content">
-    <thead>
-        <tr>
-            <td class="col-3">Category ID</td>
-            <td class="col-3">Book Category </td>
-            <td class="col-3">Stock Type </td>
-            <td class="col-3">Calender Year </td>
-            <td class="col-3">Action</td>
-        </tr>
-    </thead>
-   @foreach(var BookCategory in Model)
-   {
-       <tbody>
-           <tr>
-               <td>@BookCategory.CategoryId</td>
-               <td>@BookCategory.BookCategoryName</td>
-               <td>@BookCategory.StockType</td>
-               <td>@BookCategory.CalenderYear</td>
-               <td>
-                   <a asp-action="EditCategory" asp-controller="Category" class="btn  btn-outline-secondary">Edit</a>
-                   <a asp-action="RemoveCategory" asp-controller="Category" class="btn  btn-outline-danger">Remove</a>
-               </td>
-           </tr>
-       </tbody>
-   }
-    </table>    
+        <thead class="table-active">
+            <tr>
+                <td class="col-1.5 text-sm-center">Category ID</td>
+                <td class="col-2.5 text-sm-center">Book Category </td>
+                <td class="col-2 text-sm-center">Stock Type </td>
+                <td class="col-2 text-sm-center">Calender Year </td>
+                <td class="col-4 text-sm-center">Action</td>
+            </tr>
+        </thead>
+        @foreach (var BookCategory in Model)
+        {
+            <tbody>
+                <tr class="text-sm-center">
+                    <td>@BookCategory.CategoryId</td>
+                    <td>@BookCategory.BookCategoryName</td>
+                    <td>@BookCategory.StockType</td>
+                    <td>@BookCategory.CalenderYear</td>
+                    <td>
+                        <a asp-action="EditCategory" asp-controller="Category" class="btn  btn-outline-secondary">Edit</a>
+                        <a href="/Category/RemoveCategory?Id=@BookCategory.Id" target="_blank" class="btn  btn-outline-danger">Remove</a>
+                    </td>
+                </tr>
+            </tbody>
+        }
+    </table>
 </div>
 
 

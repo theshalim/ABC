@@ -4,31 +4,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<form asp-action="AddCategory" method="post" asp-controller="Category">
-    <div class="form-group">
-        <label asp-for="CategoryId">Category ID</label>
-        <input asp-for="CategoryId" class="form-control" />
-        <span asp-validation-for="CategoryId"></span>
+<div class="row">
+   <div class="col-7">
+        <form asp-action="AddCategory" method="post" asp-controller="Category">
+            <div class="form-group">
+                <label asp-for="CategoryId">Category ID</label>
+                <input asp-for="CategoryId" class="form-control" />
+                <span asp-validation-for="CategoryId"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCategoryName"> Book Category Name</label>
+                <input asp-for="BookCategoryName" class="form-control" />
+                <span asp-validation-for="BookCategoryName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockType"> Stock Type</label>
+                <input asp-for="StockType" class="form-control" />
+                <span asp-validation-for="StockType"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalenderYear"> Calender Year</label>
+                <input asp-for="CalenderYear" class="form-control" />
+                <span asp-validation-for="CalenderYear"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-primary float-sm-right">Add Category</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="BookCategoryName"> Book Category Name</label>
-        <input asp-for="BookCategoryName" class="form-control" />
-        <span asp-validation-for="BookCategoryName"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="StockType"> Stock Type</label>
-        <input asp-for="StockType" class="form-control" />
-        <span asp-validation-for="StockType"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="CalenderYear"> Calender Year</label>
-        <input asp-for="CalenderYear" class="form-control" />
-        <span asp-validation-for="CalenderYear"></span>
-    </div>
-
-    <button type="submit" class="btn btn-outline-primary">Add Category</button>
-
-</form>
+</div>

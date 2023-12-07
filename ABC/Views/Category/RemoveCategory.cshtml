@@ -32,7 +32,7 @@
 </dl>
 <form asp-action="RemoveCategory">
     <div>
-        <input type="submit" value="RemoveCategory" />
+        <a   href="/Category/RemoveCategoryConfirmed?Id=@ViewBag.Id" value="RemoveCategory" >Remove</a>
         <button type="reset" class="btn-dark">Back</button>
     </div>
 </form>

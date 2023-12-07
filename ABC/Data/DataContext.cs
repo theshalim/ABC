@@ -13,5 +13,6 @@ namespace ABC.Data
         {
         }
         public virtual DbSet<BookCategory> BookCategories { get; set; }
+        public virtual DbSet<Test> Tests { get; set; }
     }
 }

@@ -32,15 +32,16 @@ namespace ABC.Controllers
             _context.SaveChanges();
             return RedirectToAction("Category");
         }
+
         [HttpGet]
         public IActionResult RemoveCategory(int Id)
         {
-            var category = _context.BookCategories.Find(Id);
-           
+            var category = _context.BookCategories.Where(x=>x.Id == Id).FirstOrDefault();
+            ViewBag.Id = Id;
             return View(category);
             
         }
-        [HttpPost]
+        [HttpGet]
         public IActionResult RemoveCategoryConfirmed(int Id)
         {
             var Category = _context.BookCategories.Find(Id);
@@ -48,14 +49,9 @@ namespace ABC.Controllers
             {
                 return NotFound();
             }
-            else
-            {
-
-            }
            _context.BookCategories.Remove(Category);
             _context.SaveChanges();
-            return View();
+            return RedirectToAction("Category");
         }
-   
     }
 }
